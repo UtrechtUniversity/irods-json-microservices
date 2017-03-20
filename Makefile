@@ -8,7 +8,7 @@ LIBS = $(MSI_ADMIN_UTILS) \
        $(MSI_JSON_UTILS) \
        $(MSI_HTTP_UTILS)
 
-IRODS_INSTALL_DIR = /var/lib/irods
+IRODS_INSTALL_DIR = /usr/lib/irods
 
 .PHONY: all $(LIBS) clean
 

@@ -1,5 +1,5 @@
 // =-=-=-=-=-=-=-
-#include "msParam.hpp"
+#include "msParam.h"
 #include "reGlobalsExtern.hpp"
 #include "irods_ms_plugin.hpp"
 
