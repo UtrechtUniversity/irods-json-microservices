@@ -100,11 +100,13 @@ extern "C" {
         } else if ( strOps == "get" ) {
             json_t *elem = json_array_get(root, inIdx);
 
-            if ( json_typeof(elem) == JSON_OBJECT || json_typeof(elem) == JSON_OBJECT ) {
-                fillStrInMsParam(val, json_dumps(elem,0));
-            } else { 
+	    /* output a string directly, but encode other json types using json_dumps with JSON_ENCODE_ANY set */
+            if ( json_is_string(elem)) { 
                 fillStrInMsParam(val, json_string_value(elem));
+            } else {
+                fillStrInMsParam(val, json_dumps(elem, JSON_ENCODE_ANY));
             }
+
 
             outSizeOrIndex = inIdx;
         }
